@@ -1,5 +1,5 @@
 require "http"
-reqiure "tty-table"
+# require "tty-table"
 
 response = HTTP.get("http://localhost:3000/all.json").parse(:json)
 
@@ -10,7 +10,7 @@ end
 
 puts "Crazy store, we have everything you never knew you needed"
 puts "---------------------------------------------------------"
-puts "\*\*\*\*\*\*\What would you like to look at?/*/*/*/*/*/*/"
+puts "$*$*$*$*$*$  What would you like to look at?  $*$*$*$*$*$"
 puts
 
 index = 1
