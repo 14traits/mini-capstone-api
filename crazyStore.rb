@@ -1,7 +1,7 @@
 require "http"
 # require "tty-table"
 
-response = HTTP.get("http://localhost:3000/all.json").parse(:json)
+response = HTTP.get("http://localhost:3000/products.json").parse(:json)
 
 array = Array.new
 response.each do |product|

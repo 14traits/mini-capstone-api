@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  def all_products
+  def index
     array = Array.new
     products = Product.all
     products.each do |product|
