@@ -2,14 +2,14 @@ Rails.application.routes.draw do
 
   # Gets
   get "/products" => "products#index"
-  get "/product/:id", controller: "products", action: "find_product"
+  get "/products/:id", controller: "products", action: "find_product"
 
   # Posts
   post "/products" => "products#create"
 
   # Patch
-  patch "/product/:id" => "products#update"
+  patch "/products/:id" => "products#update"
 
   # Delete
-  delete "/product/:id" => "products#destroy"
+  delete "/products/:id" => "products#destroy"
 end
