@@ -22,3 +22,6 @@ Content-Type: application/json
 {
   "name": "Lightsaber"
 }
+
+###
+DELETE http://localhost:3000/product/5.json
