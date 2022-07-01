@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     array = Array.new
     products = Product.all
     products.each do |product|
-      array << { name: product.name, prices: product.prices, image_url: product.image_url, description: product.description }
+      array << { id: product.id, name: product.name, prices: product.prices, image_url: product.image_url, description: product.description }
     end
     render json: array.as_json
   end
@@ -20,6 +20,18 @@ class ProductsController < ApplicationController
       image_url: params["image_url"],
       description: params["description"],
     )
+    product.save
+    render json: product.as_json
+  end
+
+  def update
+    product = Product.find_by(id: params["id"])
+
+    product.name = params["name"] || product.name
+    product.prices = params["prices"] || product.prices
+    product.image_url = params["image_url"] || product.image_url
+    product.description = params["description"] || product.description
+
     product.save
     render json: product.as_json
   end
