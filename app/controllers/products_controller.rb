@@ -1,43 +1,43 @@
 class ProductsController < ApplicationController
   def index
-    array = Array.new
-    products = Product.all
-    products.each do |product|
-      array << { id: product.id, name: product.name, prices: product.prices, image_url: product.image_url, description: product.description }
-    end
-    render json: array.as_json
+    # array = Array.new
+    @products = Product.all
+    # @products.each do |product|
+    #   array << { id: product.id, name: product.name, prices: product.prices, image_url: product.image_url, description: product.description }
+    # end
+    render template: "products/index"
   end
 
   def find_product
-    product = Product.find_by(id: params["id"])
-    render json: product.as_json(methods: [:friendly_created_at, :is_discounted?, :tax, :total])
+    @product = Product.find_by(id: params["id"])
+    render template: "products/show"
   end
 
   def create
-    product = Product.new(
+    @product = Product.new(
       name: params["name"],
       prices: params["prices"],
       image_url: params["image_url"],
       description: params["description"],
     )
-    product.save
-    render json: product.as_json
+    @product.save
+    render template: "products/show"
   end
 
   def update
-    product = Product.find_by(id: params["id"])
+    @product = Product.find_by(id: params["id"])
 
-    product.name = params["name"] || product.name
-    product.prices = params["prices"] || product.prices
-    product.image_url = params["image_url"] || product.image_url
-    product.description = params["description"] || product.description
+    @product.name = params["name"] || @product.name
+    @product.prices = params["prices"] || @product.prices
+    @product.image_url = params["image_url"] || @product.image_url
+    @product.description = params["description"] || @product.description
 
-    product.save
-    render json: product.as_json
+    @product.save
+    render template: "products/show"
   end
 
   def destroy
-    product = Product.find_by(id: params["id"])
+    @product = Product.find_by(id: params["id"])
     product.destroy
     render json: { message: "Product was deleted!" }
   end
