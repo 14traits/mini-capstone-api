@@ -76,6 +76,7 @@ GEM
       reline (>= 0.2.7)
     digest (3.1.0)
     erubi (1.10.0)
+    ffaker (2.21.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -149,6 +150,9 @@ GEM
     rake (13.0.6)
     reline (0.3.1)
       io-console (~> 0.5)
+    seed_dump (3.3.1)
+      activerecord (>= 4)
+      activesupport (>= 4)
     strscan (3.0.3)
     thor (1.2.1)
     timeout (0.3.0)
@@ -165,11 +169,13 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  ffaker
   jb
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.3)
+  seed_dump
   tzinfo-data
 
 RUBY VERSION
