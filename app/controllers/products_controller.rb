@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def find_product
-    @product = Product.find_by(id: params["id"])
+    product = Product.find_by(id: params["id"])
     render template: "products/show"
   end
 
@@ -20,8 +20,11 @@ class ProductsController < ApplicationController
       image_url: params["image_url"],
       description: params["description"],
     )
-    @product.save
-    render template: "products/show"
+    if @product.save
+      render template: "products/show"
+    else
+      render json: { errors: product.errors.full_messages }
+    end
   end
 
   def update
@@ -32,12 +35,15 @@ class ProductsController < ApplicationController
     @product.image_url = params["image_url"] || @product.image_url
     @product.description = params["description"] || @product.description
 
-    @product.save
-    render template: "products/show"
+    if @product.save
+      render template: "products/show"
+    else
+      render json: { errors: product.errors.full_messages }
+    end
   end
 
   def destroy
-    @product = Product.find_by(id: params["id"])
+    product = Product.find_by(id: params["id"])
     product.destroy
     render json: { message: "Product was deleted!" }
   end
