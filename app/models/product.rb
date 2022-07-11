@@ -1,8 +1,13 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
   # validates :name, presence: true, uniqueness: true
   # validates :prices, presence: true, numericality: { greater_than: 0 }
   # validates :description, length: { in: 10..500 }
   # validates :image_url, format: { with: /\.(png|jpg)\Z/i }
+
+  def images
+    Image.where(product_id: id)
+  end
 
   def friendly_created_at
     created_at.strftime("%B %e, %Y")
@@ -24,9 +29,5 @@ class Product < ApplicationRecord
   def total
     total = prices + tax
     return total
-  end
-
-  def supplier
-    Supplier.find_by(id: supplier_id)
   end
 end

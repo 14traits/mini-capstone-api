@@ -8,6 +8,7 @@
 Product.destroy_all
 
 Product.create(name: "Lifelike Elephant Inflatable", prices: 22, image_url: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1571692002-inflatable-elephant-1571691977.jpg?crop=1.00xw:0.667xh;0,0.220xh&resize=768:*", description: "Try to toss a hula hoop over the trunk of the 19-inch tall inflatable elephant, because why not?")
+Photo.create
 Product.create(name: "Meat Shredder Claws", prices: 17, image_url: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1571689550-51Q0xuEOjRL.jpg?crop=1xw:1.00xh;center,top&resize=768:*", description: "This surprisingly efficient way of shredding your meat has the added in bonus of making you feel like Wolverine.")
 Product.create(name: "Nicolas Cage Pillow", prices: 13, image_url: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1632326476-51qsxODMtYL._SL500_.jpg?crop=1xw:1.00xh;center,top&resize=768:*", description: "There are no words for this one, just put the bunny back in the box.")
 Product.create(name: "Personalised Cardboard Cutout", prices: 70, image_url: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1632326702-41-dsPDCWlL._SL500_.jpg?crop=1xw:1.00xh;center,top&resize=768:*", description: "You don't have to be a celebrity to get your own cardboard cut out, apparently! This seller just asks that you send them an image and height specifications, and they'll send you a larger-than-life cut-out of yourself.")
