@@ -1,3 +1,4 @@
+### PRODUCTS ###
 GET http://localhost:3000/products.json
 ###
 
@@ -24,3 +25,31 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/products/10.json
+
+### SUPPLIERS ###
+
+GET http://localhost:3000/suppliers.json
+###
+
+GET  http://localhost:3000/suppliers/3.json
+###
+
+POST http://localhost:3000/suppliers.json
+Content-Type: application/json
+
+{
+  "name": "Foody Bib",
+  "email": "nope@spamherelots.com",
+  "phone_number": "555-555-5555",
+}
+
+###
+PATCH http://localhost:3000/suppliers/4.json
+Content-Type: application/json
+
+{
+  "name": "PIXAR"
+}
+
+###
+DELETE http://localhost:3000/suppliers/5.json
