@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # Posts
   post "/products" => "products#create"
   post "/suppliers" => "suppliers#create"
+  post "/users" => "users#create"
 
   # Patch
   patch "/products/:id" => "products#update"
