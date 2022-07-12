@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post "/products" => "products#create"
   post "/suppliers" => "suppliers#create"
   post "/users" => "users#create"
+  post "/sessions" => "sessions#create"
 
   # Patch
   patch "/products/:id" => "products#update"
