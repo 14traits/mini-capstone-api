@@ -73,3 +73,14 @@ Content-Type: application/json
   "email": "test@test.com",
   "password": "password"
 }
+
+### Photos create
+POST http://localhost:3000/photos.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc3MzQ1MzJ9.Jmx-RufeYKyqHXHC7WfBsYGSB8kTWc0RzoaWJ5xCAx8
+Content-Type: application/json
+
+{
+  "name": "Test name",
+  "width": 640,
+  "height": 480
+}

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images, defaults: { format: :json }
 
   # Gets
   get "/products" => "products#index"
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   # Posts
   post "/products" => "products#create"
   post "/suppliers" => "suppliers#create"
+  post "/photos" => "images#create"
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
 
