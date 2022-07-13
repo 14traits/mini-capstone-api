@@ -84,3 +84,17 @@ Content-Type: application/json
   "width": 640,
   "height": 480
 }
+
+###
+POST http://localhost:3000/orders.json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc3MzQ1MzJ9.Jmx-RufeYKyqHXHC7WfBsYGSB8kTWc0RzoaWJ5xCAx8
+Content-Type: application/json
+
+{
+  "user_id": "3",
+  "product_id": "20",
+  "quantity": "1",
+  "subtotal": "13",
+  "tax": "2",
+  "total": "15"
+}
