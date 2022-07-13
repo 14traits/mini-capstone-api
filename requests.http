@@ -1,3 +1,5 @@
+@jwt_test = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc4MTkxNDh9._lDsaxc11tTm4dP98121rmKcuxNIKmuNUgdTwMSyHig
+
 ### PRODUCTS ###
 GET http://localhost:3000/products.json
 ###
@@ -87,7 +89,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc4MTkxNDh9._lDsaxc11tTm4dP98121rmKcuxNIKmuNUgdTwMSyHig
+Authorization: Bearer {{jwt_test}}
 Content-Type: application/json
 
 {
