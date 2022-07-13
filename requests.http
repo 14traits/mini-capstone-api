@@ -92,5 +92,5 @@ Content-Type: application/json
 
 {
   "product_id": "20",
-  "quantity": "1"
+  "quantity": "3"
 }
