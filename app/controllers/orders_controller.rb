@@ -1,12 +1,18 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user
+
   def index
-    orders = Order.all
+    orders = current_user.orders
     render json: orders.as_json
   end
 
   def show
-    order = Order.find_by(id: params[:id])
-    render json: order.as_json
+    order = current_user.orders.find_by(id: params[:id])
+    if current_user.id == order.user_id
+      render json: order.as_json
+    else
+      render json: { message: "You must be logged in to see your orders" }, status: 406
+    end
   end
 
   def create
