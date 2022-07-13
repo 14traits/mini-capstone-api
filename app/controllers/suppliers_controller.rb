@@ -4,7 +4,7 @@ class SuppliersController < ApplicationController
     render json: @suppliers.as_json
   end
 
-  def find_supplier
+  def show
     supplier = Supplier.find_by(id: params["id"])
     render json: supplier.as_json
   end

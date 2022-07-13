@@ -87,14 +87,10 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/orders.json
-# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc3MzQ1MzJ9.Jmx-RufeYKyqHXHC7WfBsYGSB8kTWc0RzoaWJ5xCAx8
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc4MTkxNDh9._lDsaxc11tTm4dP98121rmKcuxNIKmuNUgdTwMSyHig
 Content-Type: application/json
 
 {
-  "user_id": "3",
   "product_id": "20",
-  "quantity": "1",
-  "subtotal": "13",
-  "tax": "2",
-  "total": "15"
+  "quantity": "1"
 }
