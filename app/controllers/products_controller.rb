@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
     if @product.save
       render template: "products/show"
     else
-      render json: { errors: product.errors.full_messages }
+      render json: { errors: product.errors.full_messages }, status: 418
     end
   end
 
