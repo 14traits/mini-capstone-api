@@ -1,10 +1,18 @@
 class Product < ApplicationRecord
   belongs_to :supplier
   has_many :orders
+  has_many :category_products
+  has_many :categories, through: :category_products
   # validates :name, presence: true, uniqueness: true
   # validates :prices, presence: true, numericality: { greater_than: 0 }
   # validates :description, length: { in: 10..500 }
   # validates :image_url, format: { with: /\.(png|jpg)\Z/i }
+
+  # def categories
+  #   category_products.map do |category_product|
+  #     category_product.category
+  #   end
+  # end
 
   def images
     Image.where(product_id: id)
