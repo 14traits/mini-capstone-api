@@ -22,4 +22,11 @@ class CartedProductsController < ApplicationController
       render json: { errors: carted_product.errors.full_messages }, status: :bad_request
     end
   end
+
+  def destroy
+    carted_product = CartedProduct.find_by(id: params[:id])
+    carted_product.status = "removed"
+    carted_product.save
+    render json: { status: "Carted producted successfully removed!" }
+  end
 end

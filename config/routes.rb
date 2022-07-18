@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   delete "/products/:id" => "products#destroy"
   delete "/suppliers/:id" => "suppliers#destroy"
   delete "/orders/:id" => "orders#destroy"
+  delete "/cart/:id" => "carted_products#destroy"
 end

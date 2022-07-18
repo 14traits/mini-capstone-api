@@ -92,10 +92,7 @@ POST http://localhost:3000/orders.json
 Authorization: Bearer {{jwt_test}}
 Content-Type: application/json
 
-{
-  "product_id": "20",
-  "quantity": "3"
-}
+
 ### Shopping Cart ###
 GET http://localhost:3000/cart.json
 Authorization: Bearer {{jwt_test}}
