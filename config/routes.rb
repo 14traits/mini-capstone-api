@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get "/suppliers/:id" => "suppliers#show"
   get "/orders" => "orders#index"
   get "/orders/:id" => "orders#show"
+  get "/cart" => "carted_products#index"
+  get "/cart/:id" => "carted_products#show"
 
   # Posts
   post "/products" => "products#create"
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
   post "/orders" => "orders#create"
+  post "/cart" => "carted_products#create"
 
   # Patch
   patch "/products/:id" => "products#update"

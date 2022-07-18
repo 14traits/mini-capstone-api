@@ -1,4 +1,4 @@
-@jwt_test = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc4MTkxNDh9._lDsaxc11tTm4dP98121rmKcuxNIKmuNUgdTwMSyHig
+@jwt_test = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTgyNTQwMzV9.wMYxlCbJgtlQjqNma-1YtRtzjFK-AaUUPaJZY9n5t_k
 
 ### PRODUCTS ###
 GET http://localhost:3000/products.json
@@ -95,4 +95,18 @@ Content-Type: application/json
 {
   "product_id": "20",
   "quantity": "3"
+}
+### Shopping Cart ###
+GET http://localhost:3000/cart.json
+Authorization: Bearer {{jwt_test}}
+###
+
+### Shopping Cart create 
+POST http://localhost:3000/cart.json
+Authorization: Bearer {{jwt_test}}
+Content-Type: application/json
+
+{
+  "product_id": "20",
+  "quantity": "7"
 }
